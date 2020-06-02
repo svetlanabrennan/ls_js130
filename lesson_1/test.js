@@ -1,8 +1,6 @@
 function map(array, callback) {
   return array.reduce((prev, curr) => {
-    if (callback(curr)) {
-      prev.push(callback(curr));
-    }
+    prev.push(callback(curr));
     return prev;
   }, []);
 }
