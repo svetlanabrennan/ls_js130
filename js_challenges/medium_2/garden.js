@@ -17,10 +17,8 @@ class Garden {
     this.rows = plants.split("\n");
     this.students = students.sort().map(student => student.toLowerCase());
     this.students.forEach((student, idx) => {
-      this.assigned[student] = this.assignPlants(idx);
+      this[student] = this.assignPlants(idx);
     });
-
-    return this.assigned;
   }
 
   assignPlants(index) {
@@ -32,8 +30,6 @@ class Garden {
       this.rows[1][firstCup],
       this.rows[1][secondCup]
     ]
-
-
     return plants.map(plant => PLANTCHART[plant]);
   }
 }
